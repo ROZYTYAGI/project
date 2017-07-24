@@ -42,13 +42,13 @@ public class AirportDaoImpl implements AirportDao {
 	@Override
 	public Airport get(String airportcode) {
 		Session session = sessionFactory.getCurrentSession();
-		return null;
+		return (Airport) session.get(Airport.class, airportcode); 
 	}
 
 	@Override
 	public void update(Airport airport) {
 		// TODO Auto-generated method stub
-		
+		this.sessionFactory.getCurrentSession().update(airport);
 	}
 
 }

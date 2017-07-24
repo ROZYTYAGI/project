@@ -51,19 +51,21 @@ public class AirportServiceImpl implements AirportService {
     @Override
 	public Airport findAirportObj(final String airportcode) {
 		
-		return null;
+		return airportDao.get(airportcode);
 	}
 
 	@Override
 	public Airport get(String airportcode) {
 		// TODO Auto-generated method stub
-		return null;
+		return airportDao.get(airportcode);
 	}
 
 	@Override
-	public void updateAirport(String code, String name) {
+	public void updateAirport(String airportcode, String airportname) {
 		// TODO Auto-generated method stub
-		
+		Airport airport=get(airportcode);
+		airport.setAirportname(airportname);
+		airportDao.update(airport);
 	}
 
 }
